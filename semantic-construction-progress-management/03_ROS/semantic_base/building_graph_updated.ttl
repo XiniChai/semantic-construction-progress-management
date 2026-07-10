@@ -1,0 +1,671 @@
+@prefix bot: <https://w3id.org/bot#> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix cSite: <http://www.owl-ontologies.com/cSite#> .
+@prefix cpmb: <http://www.semanticweb.org/cmpb/> .
+@prefix dica: <https://w3id.org/digitalconstruction/0.5/Agents#> .
+@prefix dice: <https://w3id.org/digitalconstruction/Entities#> .
+@prefix dicp: <https://w3id.org/digitalconstruction/0.5/Processes#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cSite:hasActualDuration a owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+cSite:hasActualFinish a owl:DatatypeProperty ;
+    rdfs:domain dicp:Activity ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+cSite:hasActualStart a owl:DatatypeProperty ;
+    rdfs:domain dicp:Activity .
+
+<http://www.semanticweb.org/cmpb> a owl:Ontology .
+
+cpmb:EnvelopeComponents a owl:Class ;
+    rdfs:subClassOf bot:Element .
+
+cpmb:InTrainsit a owl:NamedIndividual,
+        dice:ActivityContext ;
+    owl:sameAs cpmb:Installed,
+        cpmb:Storage .
+
+cpmb:P2 a owl:NamedIndividual,
+        dicp:ActivityGroup .
+
+cpmb:P3 a owl:NamedIndividual,
+        dicp:ActivityGroup .
+
+cpmb:P4 a owl:NamedIndividual,
+        dicp:ActivityGroup .
+
+cpmb:hasElevation a owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+cpmb:hasGrid a owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+cpmb:hasHeight a owl:DatatypeProperty ;
+    rdfs:subPropertyOf cpmb:hasSize .
+
+cpmb:hasID a owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+cpmb:hasLength a owl:DatatypeProperty ;
+    rdfs:subPropertyOf cpmb:hasSize .
+
+cpmb:hasQuantity a owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+cpmb:hasVolume a owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+cpmb:hasWeight a owl:DatatypeProperty ;
+    rdfs:domain dice:ActivityContext ;
+    rdfs:subPropertyOf owl:topDataProperty .
+
+cpmb:hasWidth a owl:DatatypeProperty ;
+    rdfs:subPropertyOf cpmb:hasSize .
+
+bot:Site a owl:Class ;
+    rdfs:subClassOf bot:Zone .
+
+bot:hasBuilding a owl:ObjectProperty ;
+    rdfs:domain bot:Zone ;
+    rdfs:range bot:Building ;
+    rdfs:subPropertyOf bot:containsZone .
+
+bot:hasElement a owl:ObjectProperty ;
+    rdfs:domain bot:Zone ;
+    rdfs:range bot:Element ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+bot:hasSpace a owl:ObjectProperty ;
+    rdfs:domain bot:Zone ;
+    rdfs:range bot:Space ;
+    rdfs:subPropertyOf bot:containsZone .
+
+bot:hasStorey a owl:ObjectProperty ;
+    rdfs:domain bot:Zone ;
+    rdfs:range bot:Storey ;
+    rdfs:subPropertyOf bot:containsZone .
+
+dicp:hasObject a owl:ObjectProperty ;
+    rdfs:domain dicp:ObjectActivity ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+dicp:isObservedBy a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+dice:hasActivity a owl:ObjectProperty ;
+    rdfs:range dicp:Activity ;
+    owl:inverseOf dice:hasState .
+
+dice:hasEquipment a owl:ObjectProperty ;
+    rdfs:domain dicp:Activity ;
+    rdfs:range dice:Equipment ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+dice:hasGroupActivity a owl:ObjectProperty ;
+    rdfs:domain dicp:Activity ;
+    rdfs:range dicp:Activity ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+dice:hasParticipant a owl:ObjectProperty ;
+    rdfs:domain dicp:ObjectActivity ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+dice:isLocationOf a owl:ObjectProperty ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+cpmb:ID220114 a owl:NamedIndividual,
+        dica:Person ;
+    owl:sameAs cpmb:ID220120 .
+
+cpmb:P1_07 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    owl:sameAs cpmb:P1_08,
+        cpmb:P1_18 ;
+    dicp:hasObject cpmb:SQM_15 ;
+    dicp:isObservedBy cpmb:camera_1 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220103 .
+
+cpmb:P1_10 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    owl:sameAs cpmb:P1_11 ;
+    dicp:hasObject cpmb:SQM_16 ;
+    dicp:isObservedBy cpmb:camera_1 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220093 .
+
+cpmb:SQM_01 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "1360" ;
+    cpmb:hasGrid "1-2/A-B" ;
+    cpmb:hasHeight "2140" ;
+    cpmb:hasID "HNTQT_01" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "2692" ;
+    owl:sameAs cpmb:SQM_11 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_11 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+cpmb:SQM_02 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "3350" ;
+    cpmb:hasGrid "2/A-B" ;
+    cpmb:hasHeight "1990" ;
+    cpmb:hasID "HNTQT_02" ;
+    cpmb:hasLength "5545" ;
+    cpmb:hasWidth "2692" ;
+    owl:sameAs cpmb:SQM_03,
+        cpmb:SQM_19 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_06 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+cpmb:SQM_05 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "3350" ;
+    cpmb:hasGrid "1-2/A-B" ;
+    cpmb:hasHeight "1990" ;
+    cpmb:hasID "HNTQT_05" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "5545" ;
+    owl:sameAs cpmb:SQM_10,
+        cpmb:SQM_20 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_12 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+brick:Sensor a owl:Class .
+
+bot:Building a owl:Class ;
+    rdfs:subClassOf bot:Zone .
+
+bot:Space a owl:Class ;
+    rdfs:subClassOf bot:Zone .
+
+dice:BuildingObject a owl:Class .
+
+dice:hasState a owl:ObjectProperty ;
+    rdfs:domain dicp:Activity ;
+    rdfs:range dice:ActivityContext .
+
+cpmb:P1_01 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    owl:sameAs cpmb:P1_02,
+        cpmb:P1_09 ;
+    dicp:hasObject cpmb:SQM_06,
+        cpmb:SQM_07 ;
+    dicp:isObservedBy cpmb:camera_1 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220093 .
+
+cpmb:P1_02 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    owl:sameAs cpmb:P1_03 ;
+    dicp:hasObject cpmb:SQM_03 ;
+    dicp:isObservedBy cpmb:camera_1 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220104 .
+
+cpmb:P1_03 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    owl:sameAs cpmb:P1_04 ;
+    dicp:hasObject cpmb:SQM_10 ;
+    dicp:isObservedBy cpmb:camera_1 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220080 .
+
+cpmb:P1_05 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    owl:sameAs cpmb:P1_06 ;
+    dicp:hasObject cpmb:SQM_04 ;
+    dicp:isObservedBy cpmb:camera_1 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220093 .
+
+cpmb:P1_06 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    dicp:hasObject cpmb:SQM_02 ;
+    dicp:isObservedBy cpmb:camera_1 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220103 .
+
+cpmb:P1_08 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    cSite:hasActualDuration "0:00:00"^^xsd:string ;
+    cSite:hasActualFinish "2021-08-27T16:02:07"^^xsd:dateTime ;
+    cSite:hasActualStart "2021-08-27T16:02:07"^^xsd:dateTime ;
+    owl:sameAs cpmb:P1_09 ;
+    dicp:hasObject cpmb:SQM_11 ;
+    dicp:isObservedBy cpmb:camera_1 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220104 .
+
+cpmb:P1_11 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    owl:sameAs cpmb:P1_12 ;
+    dicp:hasObject cpmb:SQM_01 ;
+    dicp:isObservedBy cpmb:camera_1 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220080 .
+
+cpmb:P1_12 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    owl:sameAs cpmb:P1_13 ;
+    dicp:hasObject cpmb:SQM_05 ;
+    dicp:isObservedBy cpmb:camera_2 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220080 .
+
+cpmb:P1_13 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    cSite:hasActualDuration "0:02:01"^^xsd:string ;
+    cSite:hasActualFinish "2021-08-27T16:02:01"^^xsd:dateTime ;
+    cSite:hasActualStart "2021-08-27T16:00:00"^^xsd:dateTime ;
+    owl:sameAs cpmb:P1_14 ;
+    dicp:hasObject cpmb:SQM_18 ;
+    dicp:isObservedBy cpmb:camera_2 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220103 .
+
+cpmb:P1_14 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    cSite:hasActualDuration "0:00:01"^^xsd:string ;
+    cSite:hasActualFinish "2021-08-27T16:01:16"^^xsd:dateTime ;
+    cSite:hasActualStart "2021-08-27T16:01:15"^^xsd:dateTime ;
+    owl:sameAs cpmb:P1_15 ;
+    dicp:hasObject cpmb:SQM_14 ;
+    dicp:isObservedBy cpmb:camera_2 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220103 .
+
+cpmb:P1_15 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    cSite:hasActualDuration "0:00:31"^^xsd:string ;
+    cSite:hasActualFinish "2021-08-27T16:01:51"^^xsd:dateTime ;
+    cSite:hasActualStart "2021-08-27T16:01:20"^^xsd:dateTime ;
+    owl:sameAs cpmb:P1_16 ;
+    dicp:hasObject cpmb:SQM_19 ;
+    dicp:isObservedBy cpmb:camera_2 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220104 .
+
+cpmb:P1_16 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    cSite:hasActualDuration "0:00:46"^^xsd:string ;
+    cSite:hasActualFinish "2021-08-27T16:02:55"^^xsd:dateTime ;
+    cSite:hasActualStart "2021-08-27T16:02:09"^^xsd:dateTime ;
+    owl:sameAs cpmb:P1_17 ;
+    dicp:hasObject cpmb:SQM_13 ;
+    dicp:isObservedBy cpmb:camera_2 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220104 .
+
+cpmb:P1_17 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    cSite:hasActualDuration "0:00:08"^^xsd:string ;
+    cSite:hasActualFinish "2021-08-27T16:02:09"^^xsd:dateTime ;
+    cSite:hasActualStart "2021-08-27T16:02:01"^^xsd:dateTime ;
+    owl:sameAs cpmb:P1_18 ;
+    dicp:hasObject cpmb:SQM_12 ;
+    dicp:isObservedBy cpmb:camera_2 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220120 .
+
+cpmb:SQM_03 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "1360" ;
+    cpmb:hasGrid "3/A-B" ;
+    cpmb:hasHeight "2140" ;
+    cpmb:hasID "HNTQT_03" ;
+    cpmb:hasLength "5392" ;
+    cpmb:hasWidth "2692" ;
+    owl:sameAs cpmb:SQM_04 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_02 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+cpmb:SQM_04 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "3350" ;
+    cpmb:hasGrid "3-4/A-B" ;
+    cpmb:hasHeight "1990" ;
+    cpmb:hasID "HNTQT_04" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "2692" ;
+    owl:sameAs cpmb:SQM_06 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_05 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+cpmb:SQM_06 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "1360" ;
+    cpmb:hasGrid "1-2/B" ;
+    cpmb:hasHeight "2140" ;
+    cpmb:hasID "HNTQT_06" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "5392" ;
+    owl:sameAs cpmb:SQM_07 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_01 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+cpmb:SQM_07 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "1360" ;
+    cpmb:hasGrid "2-3/B" ;
+    cpmb:hasHeight "2140" ;
+    cpmb:hasID "HNTQT_07" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "5392" ;
+    owl:sameAs cpmb:SQM_08 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_01 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+cpmb:SQM_08 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "3350" ;
+    cpmb:hasGrid "3/A-B" ;
+    cpmb:hasHeight "1990" ;
+    cpmb:hasID "HNTQT_08" ;
+    cpmb:hasLength "5545" ;
+    cpmb:hasWidth "2692" ;
+    owl:sameAs cpmb:SQM_09 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_04 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+cpmb:SQM_09 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "3350" ;
+    cpmb:hasGrid "3/B-C" ;
+    cpmb:hasHeight "1990" ;
+    cpmb:hasID "HNTQT_09" ;
+    cpmb:hasLength "5545" ;
+    cpmb:hasWidth "2692" ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_04 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+cpmb:SQM_10 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "1360" ;
+    cpmb:hasGrid "3-4/B" ;
+    cpmb:hasHeight "2140" ;
+    cpmb:hasID "HNTQT_10" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "5392" ;
+    owl:sameAs cpmb:SQM_13 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_03 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+cpmb:SQM_11 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:confidence 6.992847e-01 ;
+    cpmb:hasElevation "1360" ;
+    cpmb:hasGrid "1-2/C" ;
+    cpmb:hasHeight "2140" ;
+    cpmb:hasID "HNTQT_11" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "5392" ;
+    owl:sameAs cpmb:SQM_12 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_08 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Detected .
+
+cpmb:SQM_12 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:confidence 7.211143e-01 ;
+    cpmb:hasElevation "3350" ;
+    cpmb:hasGrid "1-2/C" ;
+    cpmb:hasHeight "1990" ;
+    cpmb:hasID "HNTQT_12" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "5545" ;
+    owl:sameAs cpmb:SQM_14 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_17 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Detected .
+
+cpmb:SQM_13 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:confidence 7.323381e-01 ;
+    cpmb:hasElevation "3350" ;
+    cpmb:hasGrid "2-3/C" ;
+    cpmb:hasHeight "1990" ;
+    cpmb:hasID "HNTQT_13" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "5545" ;
+    owl:sameAs cpmb:SQM_17 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_16 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Installed .
+
+cpmb:SQM_14 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:confidence 7.589946e-01 ;
+    cpmb:hasElevation "1360" ;
+    cpmb:hasGrid "2-3/C" ;
+    cpmb:hasHeight "2140" ;
+    cpmb:hasID "HNTQT_14" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "5392" ;
+    owl:sameAs cpmb:SQM_15 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_14 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Detected .
+
+cpmb:SQM_15 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "1360" ;
+    cpmb:hasGrid "3-4/C" ;
+    cpmb:hasHeight "2140" ;
+    cpmb:hasID "HNTQT_15" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "5392" ;
+    owl:sameAs cpmb:SQM_16 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_07 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+cpmb:SQM_16 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "3350" ;
+    cpmb:hasGrid "3-4/C" ;
+    cpmb:hasHeight "1990" ;
+    cpmb:hasID "HNTQT_16" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "5545" ;
+    owl:sameAs cpmb:SQM_18 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_10 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+cpmb:SQM_17 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:confidence 6.778789e-01 ;
+    cpmb:hasElevation "3350" ;
+    cpmb:hasGrid "1-2/C-D" ;
+    cpmb:hasHeight "1990" ;
+    cpmb:hasID "HNTQT_17" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "2692" ;
+    owl:sameAs cpmb:SQM_19 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_18 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Detected .
+
+cpmb:SQM_18 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:confidence 6.001751e-01 ;
+    cpmb:hasElevation "1360" ;
+    cpmb:hasGrid "2/C-D" ;
+    cpmb:hasHeight "2140" ;
+    cpmb:hasID "HNTQT_18" ;
+    cpmb:hasLength "5392" ;
+    cpmb:hasWidth "2692" ;
+    owl:sameAs cpmb:SQM_20 ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_13 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Installed .
+
+brick:Camera a owl:Class ;
+    rdfs:subClassOf brick:Sensor .
+
+bot:Storey a owl:Class ;
+    rdfs:subClassOf bot:Zone .
+
+dicp:Resource a owl:Class .
+
+dice:Equipment a owl:Class ;
+    rdfs:subClassOf dicp:Resource .
+
+cpmb:ID220080 a owl:NamedIndividual,
+        dica:Person ;
+    owl:sameAs cpmb:ID220093 .
+
+cpmb:P1_04 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    owl:sameAs cpmb:P1_05 ;
+    dicp:hasObject cpmb:SQM_08,
+        cpmb:SQM_09 ;
+    dicp:isObservedBy cpmb:camera_1 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220093 .
+
+cpmb:P1_09 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    dicp:hasObject cpmb:SQM_20 ;
+    dicp:isObservedBy cpmb:camera_1 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220120 .
+
+cpmb:P1_18 a owl:NamedIndividual,
+        dicp:ObjectActivity ;
+    cSite:hasActualDuration "0:00:01"^^xsd:string ;
+    cSite:hasActualFinish "2021-08-27T16:02:19"^^xsd:dateTime ;
+    cSite:hasActualStart "2021-08-27T16:02:18"^^xsd:dateTime ;
+    dicp:hasObject cpmb:SQM_17 ;
+    dicp:isObservedBy cpmb:camera_2 ;
+    dice:hasEquipment cpmb:crane_1 ;
+    dice:hasParticipant cpmb:ID220120 .
+
+cpmb:SQM_19 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:confidence 8.401735e-01 ;
+    cpmb:hasElevation "3350" ;
+    cpmb:hasGrid "3/C-D" ;
+    cpmb:hasHeight "1990" ;
+    cpmb:hasID "HNTQT_19" ;
+    cpmb:hasLength "5545" ;
+    cpmb:hasWidth "2692" ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_15 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Installed .
+
+cpmb:SQM_20 a cpmb:StructuralComponents,
+        owl:NamedIndividual ;
+    cpmb:hasElevation "1360" ;
+    cpmb:hasGrid "3-4/C-D",
+        "P1_09" ;
+    cpmb:hasHeight "2140" ;
+    cpmb:hasID "HNTQT_20" ;
+    cpmb:hasLength "2692" ;
+    cpmb:hasWidth "2692" ;
+    bot:hasStorey <http://www.semanticweb.org/cmpb#1F> ;
+    dice:hasActivity cpmb:P1_09 ;
+    dice:hasGroupActivity cpmb:P1 ;
+    dice:hasState cpmb:Storage .
+
+cpmb:hasSize a owl:DatatypeProperty .
+
+bot:Element a owl:Class ;
+    rdfs:subClassOf dice:BuildingObject .
+
+bot:containsZone a owl:ObjectProperty ;
+    rdfs:domain bot:Zone ;
+    rdfs:range bot:Zone .
+
+cpmb:ID220120 a owl:NamedIndividual,
+        dica:Person .
+
+cpmb:Installed a owl:NamedIndividual,
+        dice:ActivityContext .
+
+dicp:ActivityGroup a owl:Class ;
+    rdfs:subClassOf dicp:Activity ;
+    owl:disjointWith dicp:ObjectActivity .
+
+cpmb:ID220093 a owl:NamedIndividual,
+        dica:Person ;
+    owl:sameAs cpmb:ID220103 .
+
+cpmb:ID220103 a owl:NamedIndividual,
+        dica:Person ;
+    owl:sameAs cpmb:ID220104 .
+
+cpmb:ID220104 a owl:NamedIndividual,
+        dica:Person ;
+    owl:sameAs cpmb:ID220114 .
+
+dice:ActivityContext a owl:Class ;
+    rdfs:subClassOf dicp:Activity .
+
+dica:Person a owl:Class ;
+    rdfs:subClassOf dicp:Resource .
+
+cpmb:camera_2 a owl:NamedIndividual,
+        brick:Camera .
+
+bot:Zone a owl:Class .
+
+dicp:Activity a owl:Class .
+
+cpmb:camera_1 a owl:NamedIndividual,
+        brick:Camera ;
+    owl:sameAs cpmb:camera_2 .
+
+cpmb:Storage a owl:NamedIndividual,
+        dice:ActivityContext .
+
+cpmb:crane_1 a owl:NamedIndividual,
+        dice:Equipment .
+
+<http://www.semanticweb.org/cmpb#1F> a owl:NamedIndividual,
+        bot:Storey .
+
+cpmb:P1 a owl:NamedIndividual,
+        dicp:ActivityGroup .
+
+cpmb:StructuralComponents a owl:Class ;
+    rdfs:subClassOf bot:Element .
+
+dicp:ObjectActivity a owl:Class ;
+    rdfs:subClassOf dicp:Activity .
+

@@ -1,0 +1,943 @@
+@prefix : <http://www.semanticweb.org/cmpb/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/cmpb/> .
+
+<http://www.semanticweb.org/cmpb> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/bot#containsZone
+<https://w3id.org/bot#containsZone> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <https://w3id.org/bot#Zone> ;
+                                    rdfs:range <https://w3id.org/bot#Zone> .
+
+
+###  https://w3id.org/bot#hasBuilding
+<https://w3id.org/bot#hasBuilding> rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf <https://w3id.org/bot#containsZone> ;
+                                   rdfs:domain <https://w3id.org/bot#Zone> ;
+                                   rdfs:range <https://w3id.org/bot#Building> .
+
+
+###  https://w3id.org/bot#hasElement
+<https://w3id.org/bot#hasElement> rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                  rdfs:domain <https://w3id.org/bot#Zone> ;
+                                  rdfs:range <https://w3id.org/bot#Element> .
+
+
+###  https://w3id.org/bot#hasSpace
+<https://w3id.org/bot#hasSpace> rdf:type owl:ObjectProperty ;
+                                rdfs:subPropertyOf <https://w3id.org/bot#containsZone> ;
+                                rdfs:domain <https://w3id.org/bot#Zone> ;
+                                rdfs:range <https://w3id.org/bot#Space> .
+
+
+###  https://w3id.org/bot#hasStorey
+<https://w3id.org/bot#hasStorey> rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf <https://w3id.org/bot#containsZone> ;
+                                 rdfs:domain <https://w3id.org/bot#Zone> ;
+                                 rdfs:range <https://w3id.org/bot#Storey> .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Processes#hasObject
+<https://w3id.org/digitalconstruction/0.5/Processes#hasObject> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                                               rdfs:domain <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy
+<https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  https://w3id.org/digitalconstruction/Entities#hasActivity
+<https://w3id.org/digitalconstruction/Entities#hasActivity> rdf:type owl:ObjectProperty ;
+                                                            owl:inverseOf <https://w3id.org/digitalconstruction/Entities#hasState> ;
+                                                            rdfs:range <https://w3id.org/digitalconstruction/0.5/Processes#Activity> .
+
+
+###  https://w3id.org/digitalconstruction/Entities#hasEquipment
+<https://w3id.org/digitalconstruction/Entities#hasEquipment> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf owl:topObjectProperty ;
+                                                             rdfs:domain <https://w3id.org/digitalconstruction/0.5/Processes#Activity> ;
+                                                             rdfs:range <https://w3id.org/digitalconstruction/Entities#Equipment> .
+
+
+###  https://w3id.org/digitalconstruction/Entities#hasGroupActivity
+<https://w3id.org/digitalconstruction/Entities#hasGroupActivity> rdf:type owl:ObjectProperty ;
+                                                                 rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                 rdfs:domain <https://w3id.org/digitalconstruction/0.5/Processes#Activity> ;
+                                                                 rdfs:range <https://w3id.org/digitalconstruction/0.5/Processes#Activity> .
+
+
+###  https://w3id.org/digitalconstruction/Entities#hasParticipant
+<https://w3id.org/digitalconstruction/Entities#hasParticipant> rdf:type owl:ObjectProperty ;
+                                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                                               rdfs:domain <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> .
+
+
+###  https://w3id.org/digitalconstruction/Entities#hasState
+<https://w3id.org/digitalconstruction/Entities#hasState> rdf:type owl:ObjectProperty ;
+                                                         rdfs:domain <https://w3id.org/digitalconstruction/0.5/Processes#Activity> ;
+                                                         rdfs:range <https://w3id.org/digitalconstruction/Entities#ActivityContext> .
+
+
+###  https://w3id.org/digitalconstruction/Entities#isLocationOf
+<https://w3id.org/digitalconstruction/Entities#isLocationOf> rdf:type owl:ObjectProperty ;
+                                                             rdfs:subPropertyOf owl:topObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.owl-ontologies.com/cSite#hasActualDuration
+<http://www.owl-ontologies.com/cSite#hasActualDuration> rdf:type owl:DatatypeProperty ;
+                                                        rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.owl-ontologies.com/cSite#hasActualFinish
+<http://www.owl-ontologies.com/cSite#hasActualFinish> rdf:type owl:DatatypeProperty ;
+                                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                                      rdfs:domain <https://w3id.org/digitalconstruction/0.5/Processes#Activity> .
+
+
+###  http://www.owl-ontologies.com/cSite#hasActualStart
+<http://www.owl-ontologies.com/cSite#hasActualStart> rdf:type owl:DatatypeProperty ;
+                                                     rdfs:domain <https://w3id.org/digitalconstruction/0.5/Processes#Activity> .
+
+
+###  http://www.semanticweb.org/cmpb/hasElevation
+:hasElevation rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/cmpb/hasGrid
+:hasGrid rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/cmpb/hasHeight
+:hasHeight rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :hasSize .
+
+
+###  http://www.semanticweb.org/cmpb/hasID
+:hasID rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/cmpb/hasLength
+:hasLength rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :hasSize .
+
+
+###  http://www.semanticweb.org/cmpb/hasQuantity
+:hasQuantity rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/cmpb/hasSize
+:hasSize rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/cmpb/hasVolume
+:hasVolume rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/cmpb/hasWeight
+:hasWeight rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain <https://w3id.org/digitalconstruction/Entities#ActivityContext> .
+
+
+###  http://www.semanticweb.org/cmpb/hasWidth
+:hasWidth rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :hasSize .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/cmpb/EnvelopeComponents
+:EnvelopeComponents rdf:type owl:Class ;
+                    rdfs:subClassOf <https://w3id.org/bot#Element> .
+
+
+###  http://www.semanticweb.org/cmpb/StructuralComponents
+:StructuralComponents rdf:type owl:Class ;
+                      rdfs:subClassOf <https://w3id.org/bot#Element> .
+
+
+###  https://brickschema.org/schema/Brick#Camera
+<https://brickschema.org/schema/Brick#Camera> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://brickschema.org/schema/Brick#Sensor> .
+
+
+###  https://brickschema.org/schema/Brick#Sensor
+<https://brickschema.org/schema/Brick#Sensor> rdf:type owl:Class .
+
+
+###  https://w3id.org/bot#Building
+<https://w3id.org/bot#Building> rdf:type owl:Class ;
+                                rdfs:subClassOf <https://w3id.org/bot#Zone> .
+
+
+###  https://w3id.org/bot#Element
+<https://w3id.org/bot#Element> rdf:type owl:Class ;
+                               rdfs:subClassOf <https://w3id.org/digitalconstruction/Entities#BuildingObject> .
+
+
+###  https://w3id.org/bot#Site
+<https://w3id.org/bot#Site> rdf:type owl:Class ;
+                            rdfs:subClassOf <https://w3id.org/bot#Zone> .
+
+
+###  https://w3id.org/bot#Space
+<https://w3id.org/bot#Space> rdf:type owl:Class ;
+                             rdfs:subClassOf <https://w3id.org/bot#Zone> .
+
+
+###  https://w3id.org/bot#Storey
+<https://w3id.org/bot#Storey> rdf:type owl:Class ;
+                              rdfs:subClassOf <https://w3id.org/bot#Zone> .
+
+
+###  https://w3id.org/bot#Zone
+<https://w3id.org/bot#Zone> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Agents#Person
+<https://w3id.org/digitalconstruction/0.5/Agents#Person> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Processes#Resource> .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Processes#Activity
+<https://w3id.org/digitalconstruction/0.5/Processes#Activity> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Processes#ActivityGroup
+<https://w3id.org/digitalconstruction/0.5/Processes#ActivityGroup> rdf:type owl:Class ;
+                                                                   rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Processes#Activity> ;
+                                                                   owl:disjointWith <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity
+<https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> rdf:type owl:Class ;
+                                                                    rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Processes#Activity> .
+
+
+###  https://w3id.org/digitalconstruction/0.5/Processes#Resource
+<https://w3id.org/digitalconstruction/0.5/Processes#Resource> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/Entities#ActivityContext
+<https://w3id.org/digitalconstruction/Entities#ActivityContext> rdf:type owl:Class ;
+                                                                rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Processes#Activity> .
+
+
+###  https://w3id.org/digitalconstruction/Entities#BuildingObject
+<https://w3id.org/digitalconstruction/Entities#BuildingObject> rdf:type owl:Class .
+
+
+###  https://w3id.org/digitalconstruction/Entities#Equipment
+<https://w3id.org/digitalconstruction/Entities#Equipment> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <https://w3id.org/digitalconstruction/0.5/Processes#Resource> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/cmpb#1F
+<http://www.semanticweb.org/cmpb#1F> rdf:type owl:NamedIndividual ,
+                                              <https://w3id.org/bot#Storey> .
+
+
+###  http://www.semanticweb.org/cmpb/ID220080
+:ID220080 rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/digitalconstruction/0.5/Agents#Person> ;
+          owl:sameAs :ID220093 .
+
+
+###  http://www.semanticweb.org/cmpb/ID220093
+
+###  http://www.semanticweb.org/cmpb/ID220093
+:ID220093 rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/digitalconstruction/0.5/Agents#Person> ;
+          owl:sameAs :ID220103 .
+
+
+###  http://www.semanticweb.org/cmpb/ID220103
+
+###  http://www.semanticweb.org/cmpb/ID220103
+:ID220103 rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/digitalconstruction/0.5/Agents#Person> ;
+          owl:sameAs :ID220104 .
+
+
+###  http://www.semanticweb.org/cmpb/ID220104
+
+###  http://www.semanticweb.org/cmpb/ID220104
+:ID220104 rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/digitalconstruction/0.5/Agents#Person> ;
+          owl:sameAs :ID220114 .
+
+
+###  http://www.semanticweb.org/cmpb/ID220114
+
+###  http://www.semanticweb.org/cmpb/ID220114
+:ID220114 rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/digitalconstruction/0.5/Agents#Person> ;
+          owl:sameAs :ID220120 .
+
+
+###  http://www.semanticweb.org/cmpb/ID220120
+
+###  http://www.semanticweb.org/cmpb/ID220120
+:ID220120 rdf:type owl:NamedIndividual ,
+                   <https://w3id.org/digitalconstruction/0.5/Agents#Person> .
+
+
+###  http://www.semanticweb.org/cmpb/InTrainsit
+:InTrainsit rdf:type owl:NamedIndividual ,
+                     <https://w3id.org/digitalconstruction/Entities#ActivityContext> ;
+            owl:sameAs :Installed ,
+                       :Storage .
+
+
+###  http://www.semanticweb.org/cmpb/Installed
+
+###  http://www.semanticweb.org/cmpb/Storage
+
+###  http://www.semanticweb.org/cmpb/Installed
+:Installed rdf:type owl:NamedIndividual ,
+                    <https://w3id.org/digitalconstruction/Entities#ActivityContext> .
+
+
+###  http://www.semanticweb.org/cmpb/P1
+:P1 rdf:type owl:NamedIndividual ,
+             <https://w3id.org/digitalconstruction/0.5/Processes#ActivityGroup> .
+
+
+###  http://www.semanticweb.org/cmpb/P1_01
+:P1_01 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_02 ,
+                  :P1_09 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_06 ,
+                                                                      :SQM_07 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220093 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_02
+
+###  http://www.semanticweb.org/cmpb/P1_09
+
+###  http://www.semanticweb.org/cmpb/P1_02
+:P1_02 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_03 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_03 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220104 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_03
+
+###  http://www.semanticweb.org/cmpb/P1_03
+:P1_03 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_04 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_10 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220080 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_04
+
+###  http://www.semanticweb.org/cmpb/P1_04
+:P1_04 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_05 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_08 ,
+                                                                      :SQM_09 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220093 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_05
+
+###  http://www.semanticweb.org/cmpb/P1_05
+:P1_05 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_06 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_04 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220093 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_06
+
+###  http://www.semanticweb.org/cmpb/P1_06
+:P1_06 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_02 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220103 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_07
+:P1_07 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_08 ,
+                  :P1_18 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_15 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220103 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_08
+
+###  http://www.semanticweb.org/cmpb/P1_18
+
+###  http://www.semanticweb.org/cmpb/P1_08
+:P1_08 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_09 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_11 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220104 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_09
+
+###  http://www.semanticweb.org/cmpb/P1_09
+:P1_09 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_20 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220120 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_10
+:P1_10 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_11 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_16 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220093 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_11
+
+###  http://www.semanticweb.org/cmpb/P1_11
+:P1_11 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_12 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_01 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220080 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_12
+
+###  http://www.semanticweb.org/cmpb/P1_12
+:P1_12 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_13 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_05 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_2 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220080 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_13
+
+###  http://www.semanticweb.org/cmpb/P1_13
+:P1_13 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_14 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_18 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_2 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220103 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_14
+
+###  http://www.semanticweb.org/cmpb/P1_14
+:P1_14 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_15 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_14 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_2 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220103 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_15
+
+###  http://www.semanticweb.org/cmpb/P1_15
+:P1_15 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_16 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_19 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_2 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220104 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_16
+
+###  http://www.semanticweb.org/cmpb/P1_16
+:P1_16 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_17 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_13 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_2 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220104 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_17
+
+###  http://www.semanticweb.org/cmpb/P1_17
+:P1_17 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       owl:sameAs :P1_18 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_12 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_2 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220120 .
+
+
+###  http://www.semanticweb.org/cmpb/P1_18
+
+###  http://www.semanticweb.org/cmpb/P1_18
+:P1_18 rdf:type owl:NamedIndividual ,
+                <https://w3id.org/digitalconstruction/0.5/Processes#ObjectActivity> ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#hasObject> :SQM_17 ;
+       <https://w3id.org/digitalconstruction/0.5/Processes#isObservedBy> :camera_2 ;
+       <https://w3id.org/digitalconstruction/Entities#hasEquipment> :crane_1 ;
+       <https://w3id.org/digitalconstruction/Entities#hasParticipant> :ID220120 .
+
+
+###  http://www.semanticweb.org/cmpb/P2
+:P2 rdf:type owl:NamedIndividual ,
+             <https://w3id.org/digitalconstruction/0.5/Processes#ActivityGroup> .
+
+
+###  http://www.semanticweb.org/cmpb/P3
+:P3 rdf:type owl:NamedIndividual ,
+             <https://w3id.org/digitalconstruction/0.5/Processes#ActivityGroup> .
+
+
+###  http://www.semanticweb.org/cmpb/P4
+:P4 rdf:type owl:NamedIndividual ,
+             <https://w3id.org/digitalconstruction/0.5/Processes#ActivityGroup> .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_01
+:SQM_01 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_11 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_11 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "1360" ;
+        :hasGrid "1-2/A-B" ;
+        :hasHeight "2140" ;
+        :hasID "HNTQT_01" ;
+        :hasLength "2692" ;
+        :hasWidth "2692" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_11
+
+###  http://www.semanticweb.org/cmpb/SQM_02
+:SQM_02 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_03 ,
+                   :SQM_19 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_06 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "3350" ;
+        :hasGrid "2/A-B" ;
+        :hasHeight "1990" ;
+        :hasID "HNTQT_02" ;
+        :hasLength "5545" ;
+        :hasWidth "2692" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_03
+
+###  http://www.semanticweb.org/cmpb/SQM_19
+
+###  http://www.semanticweb.org/cmpb/SQM_03
+:SQM_03 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_04 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_02 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "1360" ;
+        :hasGrid "3/A-B" ;
+        :hasHeight "2140" ;
+        :hasID "HNTQT_03" ;
+        :hasLength "5392" ;
+        :hasWidth "2692" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_04
+
+###  http://www.semanticweb.org/cmpb/SQM_04
+:SQM_04 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_06 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_05 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "3350" ;
+        :hasGrid "3-4/A-B" ;
+        :hasHeight "1990" ;
+        :hasID "HNTQT_04" ;
+        :hasLength "2692" ;
+        :hasWidth "2692" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_06
+
+###  http://www.semanticweb.org/cmpb/SQM_05
+:SQM_05 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_10 ,
+                   :SQM_20 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_12 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "3350" ;
+        :hasGrid "1-2/A-B" ;
+        :hasHeight "1990" ;
+        :hasID "HNTQT_05" ;
+        :hasLength "2692" ;
+        :hasWidth "5545" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_10
+
+###  http://www.semanticweb.org/cmpb/SQM_20
+
+###  http://www.semanticweb.org/cmpb/SQM_06
+:SQM_06 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_07 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_01 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "1360" ;
+        :hasGrid "1-2/B" ;
+        :hasHeight "2140" ;
+        :hasID "HNTQT_06" ;
+        :hasLength "2692" ;
+        :hasWidth "5392" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_07
+
+###  http://www.semanticweb.org/cmpb/SQM_07
+:SQM_07 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_08 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_01 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "1360" ;
+        :hasGrid "2-3/B" ;
+        :hasHeight "2140" ;
+        :hasID "HNTQT_07" ;
+        :hasLength "2692" ;
+        :hasWidth "5392" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_08
+
+###  http://www.semanticweb.org/cmpb/SQM_08
+:SQM_08 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_09 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_04 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "3350" ;
+        :hasGrid "3/A-B" ;
+        :hasHeight "1990" ;
+        :hasID "HNTQT_08" ;
+        :hasLength "5545" ;
+        :hasWidth "2692" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_09
+
+###  http://www.semanticweb.org/cmpb/SQM_09
+:SQM_09 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_04 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "3350" ;
+        :hasGrid "3/B-C" ;
+        :hasHeight "1990" ;
+        :hasID "HNTQT_09" ;
+        :hasLength "5545" ;
+        :hasWidth "2692" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_10
+:SQM_10 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_13 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_03 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "1360" ;
+        :hasGrid "3-4/B" ;
+        :hasHeight "2140" ;
+        :hasID "HNTQT_10" ;
+        :hasLength "2692" ;
+        :hasWidth "5392" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_13
+
+###  http://www.semanticweb.org/cmpb/SQM_11
+:SQM_11 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_12 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_08 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "1360" ;
+        :hasGrid "1-2/C" ;
+        :hasHeight "2140" ;
+        :hasID "HNTQT_11" ;
+        :hasLength "2692" ;
+        :hasWidth "5392" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_12
+
+###  http://www.semanticweb.org/cmpb/SQM_12
+:SQM_12 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_14 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_17 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "3350" ;
+        :hasGrid "1-2/C" ;
+        :hasHeight "1990" ;
+        :hasID "HNTQT_12" ;
+        :hasLength "2692" ;
+        :hasWidth "5545" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_14
+
+###  http://www.semanticweb.org/cmpb/SQM_13
+:SQM_13 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_17 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_16 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "3350" ;
+        :hasGrid "2-3/C" ;
+        :hasHeight "1990" ;
+        :hasID "HNTQT_13" ;
+        :hasLength "2692" ;
+        :hasWidth "5545" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_17
+
+###  http://www.semanticweb.org/cmpb/SQM_14
+:SQM_14 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_15 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_14 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "1360" ;
+        :hasGrid "2-3/C" ;
+        :hasHeight "2140" ;
+        :hasID "HNTQT_14" ;
+        :hasLength "2692" ;
+        :hasWidth "5392" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_15
+
+###  http://www.semanticweb.org/cmpb/SQM_15
+:SQM_15 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_16 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_07 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "1360" ;
+        :hasGrid "3-4/C" ;
+        :hasHeight "2140" ;
+        :hasID "HNTQT_15" ;
+        :hasLength "2692" ;
+        :hasWidth "5392" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_16
+
+###  http://www.semanticweb.org/cmpb/SQM_16
+:SQM_16 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_18 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_10 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "3350" ;
+        :hasGrid "3-4/C" ;
+        :hasHeight "1990" ;
+        :hasID "HNTQT_16" ;
+        :hasLength "2692" ;
+        :hasWidth "5545" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_18
+
+###  http://www.semanticweb.org/cmpb/SQM_17
+:SQM_17 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_19 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_18 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "3350" ;
+        :hasGrid "1-2/C-D" ;
+        :hasHeight "1990" ;
+        :hasID "HNTQT_17" ;
+        :hasLength "2692" ;
+        :hasWidth "2692" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_19
+
+###  http://www.semanticweb.org/cmpb/SQM_18
+:SQM_18 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        owl:sameAs :SQM_20 ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_13 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "1360" ;
+        :hasGrid "2/C-D" ;
+        :hasHeight "2140" ;
+        :hasID "HNTQT_18" ;
+        :hasLength "5392" ;
+        :hasWidth "2692" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_20
+
+###  http://www.semanticweb.org/cmpb/SQM_19
+:SQM_19 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_15 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "3350" ;
+        :hasGrid "3/C-D" ;
+        :hasHeight "1990" ;
+        :hasID "HNTQT_19" ;
+        :hasLength "5545" ;
+        :hasWidth "2692" .
+
+
+###  http://www.semanticweb.org/cmpb/SQM_20
+:SQM_20 rdf:type owl:NamedIndividual ,
+                 :StructuralComponents ;
+        <https://w3id.org/bot#hasStorey> <http://www.semanticweb.org/cmpb#1F> ;
+        <https://w3id.org/digitalconstruction/Entities#hasActivity> :P1_09 ;
+        <https://w3id.org/digitalconstruction/Entities#hasGroupActivity> :P1 ;
+        <https://w3id.org/digitalconstruction/Entities#hasState> :Storage ;
+        :hasElevation "1360" ;
+        :hasGrid "3-4/C-D" ,
+                 "P1_09" ;
+        :hasHeight "2140" ;
+        :hasID "HNTQT_20" ;
+        :hasLength "2692" ;
+        :hasWidth "2692" .
+
+
+###  http://www.semanticweb.org/cmpb/Storage
+:Storage rdf:type owl:NamedIndividual ,
+                  <https://w3id.org/digitalconstruction/Entities#ActivityContext> .
+
+
+###  http://www.semanticweb.org/cmpb/camera_1
+:camera_1 rdf:type owl:NamedIndividual ,
+                   <https://brickschema.org/schema/Brick#Camera> ;
+          owl:sameAs :camera_2 .
+
+
+###  http://www.semanticweb.org/cmpb/camera_2
+
+###  http://www.semanticweb.org/cmpb/camera_2
+:camera_2 rdf:type owl:NamedIndividual ,
+                   <https://brickschema.org/schema/Brick#Camera> .
+
+
+###  http://www.semanticweb.org/cmpb/crane_1
+:crane_1 rdf:type owl:NamedIndividual ,
+                  <https://w3id.org/digitalconstruction/Entities#Equipment> .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

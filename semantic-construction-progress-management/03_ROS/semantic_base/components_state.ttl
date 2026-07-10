@@ -1,0 +1,66 @@
+@prefix cpmb: <http://www.semanticweb.org/cmpb/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cpmb:P1_08 cpmb:durationSeconds 0 ;
+    cpmb:hasActualDuration "0:00:00"^^xsd:string ;
+    cpmb:hasActualFinish "2021-08-27T16:02:07"^^xsd:dateTime ;
+    cpmb:hasActualStart "2021-08-27T16:02:07"^^xsd:dateTime ;
+    cpmb:hasObject cpmb:SQM_11 .
+
+cpmb:P1_13 cpmb:durationSeconds 121 ;
+    cpmb:hasActualDuration "0:02:01"^^xsd:string ;
+    cpmb:hasActualFinish "2021-08-27T16:02:01"^^xsd:dateTime ;
+    cpmb:hasActualStart "2021-08-27T16:00:00"^^xsd:dateTime ;
+    cpmb:hasObject cpmb:SQM_18 .
+
+cpmb:P1_14 cpmb:durationSeconds 1 ;
+    cpmb:hasActualDuration "0:00:01"^^xsd:string ;
+    cpmb:hasActualFinish "2021-08-27T16:01:16"^^xsd:dateTime ;
+    cpmb:hasActualStart "2021-08-27T16:01:15"^^xsd:dateTime ;
+    cpmb:hasObject cpmb:SQM_14 .
+
+cpmb:P1_15 cpmb:durationSeconds 31 ;
+    cpmb:hasActualDuration "0:00:31"^^xsd:string ;
+    cpmb:hasActualFinish "2021-08-27T16:01:51"^^xsd:dateTime ;
+    cpmb:hasActualStart "2021-08-27T16:01:20"^^xsd:dateTime ;
+    cpmb:hasObject cpmb:SQM_19 .
+
+cpmb:P1_16 cpmb:durationSeconds 46 ;
+    cpmb:hasActualDuration "0:00:46"^^xsd:string ;
+    cpmb:hasActualFinish "2021-08-27T16:02:55"^^xsd:dateTime ;
+    cpmb:hasActualStart "2021-08-27T16:02:09"^^xsd:dateTime ;
+    cpmb:hasObject cpmb:SQM_13 .
+
+cpmb:P1_17 cpmb:durationSeconds 8 ;
+    cpmb:hasActualDuration "0:00:08"^^xsd:string ;
+    cpmb:hasActualFinish "2021-08-27T16:02:09"^^xsd:dateTime ;
+    cpmb:hasActualStart "2021-08-27T16:02:01"^^xsd:dateTime ;
+    cpmb:hasObject cpmb:SQM_12 .
+
+cpmb:P1_18 cpmb:durationSeconds 1 ;
+    cpmb:hasActualDuration "0:00:01"^^xsd:string ;
+    cpmb:hasActualFinish "2021-08-27T16:02:19"^^xsd:dateTime ;
+    cpmb:hasActualStart "2021-08-27T16:02:18"^^xsd:dateTime ;
+    cpmb:hasObject cpmb:SQM_17 .
+
+cpmb:SQM_11 cpmb:confidence "0.6992846812223947"^^xsd:float ;
+    cpmb:hasState "Detected"^^xsd:string .
+
+cpmb:SQM_12 cpmb:confidence "0.7211142702208663"^^xsd:float ;
+    cpmb:hasState "Detected"^^xsd:string .
+
+cpmb:SQM_13 cpmb:confidence "0.7323381297968659"^^xsd:float ;
+    cpmb:hasState "Installed"^^xsd:string .
+
+cpmb:SQM_14 cpmb:confidence "0.7589945685486159"^^xsd:float ;
+    cpmb:hasState "Detected"^^xsd:string .
+
+cpmb:SQM_17 cpmb:confidence "0.677878897151343"^^xsd:float ;
+    cpmb:hasState "Detected"^^xsd:string .
+
+cpmb:SQM_18 cpmb:confidence "0.6001750758876017"^^xsd:float ;
+    cpmb:hasState "Installed"^^xsd:string .
+
+cpmb:SQM_19 cpmb:confidence "0.8401734964343734"^^xsd:float ;
+    cpmb:hasState "Installed"^^xsd:string .
+

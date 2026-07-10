@@ -1,0 +1,10 @@
+# shell_dataset.yaml
+path: C:/Users/Xini Chai/ultralytics-main/ultralytics/datasets  # 根目录
+train: images/train                         # 训练图像相对路径
+val: images/val                             # 验证图像相对路径
+
+# 类别数
+nc: 1
+
+# 类别名称列表
+names: ["shell"]

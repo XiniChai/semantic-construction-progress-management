@@ -1,0 +1,68 @@
+{
+  "timestamp": "2026-07-09T17:43:50.261769+08:00",
+  "state": {
+    "SQM_18": {
+      "process_id": "P1_13",
+      "hasState": "Installed",
+      "hasActualStart": "2021-08-27T16:00:00",
+      "hasActualFinish": "2021-08-27T16:02:01",
+      "hasActualDuration": "0:02:01",
+      "conf": 0.6001750758876017,
+      "duration_seconds": 121
+    },
+    "SQM_14": {
+      "process_id": "P1_14",
+      "hasState": "Detected",
+      "hasActualStart": "2021-08-27T16:01:15",
+      "hasActualFinish": "2021-08-27T16:01:16",
+      "hasActualDuration": "0:00:01",
+      "conf": 0.7589945685486159,
+      "duration_seconds": 1
+    },
+    "SQM_19": {
+      "process_id": "P1_15",
+      "hasState": "Installed",
+      "hasActualStart": "2021-08-27T16:01:20",
+      "hasActualFinish": "2021-08-27T16:01:51",
+      "hasActualDuration": "0:00:31",
+      "conf": 0.8401734964343734,
+      "duration_seconds": 31
+    },
+    "SQM_12": {
+      "process_id": "P1_17",
+      "hasState": "Detected",
+      "hasActualStart": "2021-08-27T16:02:01",
+      "hasActualFinish": "2021-08-27T16:02:09",
+      "hasActualDuration": "0:00:08",
+      "conf": 0.7211142702208663,
+      "duration_seconds": 8
+    },
+    "SQM_11": {
+      "process_id": "P1_08",
+      "hasState": "Detected",
+      "hasActualStart": "2021-08-27T16:02:07",
+      "hasActualFinish": "2021-08-27T16:02:07",
+      "hasActualDuration": "0:00:00",
+      "conf": 0.6992846812223947,
+      "duration_seconds": 0
+    },
+    "SQM_13": {
+      "process_id": "P1_16",
+      "hasState": "Installed",
+      "hasActualStart": "2021-08-27T16:02:09",
+      "hasActualFinish": "2021-08-27T16:02:55",
+      "hasActualDuration": "0:00:46",
+      "conf": 0.7323381297968659,
+      "duration_seconds": 46
+    },
+    "SQM_17": {
+      "process_id": "P1_18",
+      "hasState": "Detected",
+      "hasActualStart": "2021-08-27T16:02:18",
+      "hasActualFinish": "2021-08-27T16:02:19",
+      "hasActualDuration": "0:00:01",
+      "conf": 0.677878897151343,
+      "duration_seconds": 1
+    }
+  }
+}
