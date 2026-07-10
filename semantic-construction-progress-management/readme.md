@@ -113,7 +113,7 @@ Software
 **Corresponding Author**
 Hong Zhang
 School of Architecture, Southeast University
-Email: HongZhang555@seu.edu.com
+Email: HongZhang555@seu.edu.cn
 
 **First Author**
 Xini Chai
